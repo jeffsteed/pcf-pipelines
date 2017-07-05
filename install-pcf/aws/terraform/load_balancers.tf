@@ -1,6 +1,6 @@
 resource "aws_elb" "PcfHttpElb" {
   name = "${var.prefix}-Pcf-Http-Elb"
-  subnets = ["${aws_subnet.PcfVpcPublicSubnet_az1.id}","${aws_subnet.PcfVpcPublicSubnet_az2.id}","${aws_subnet.PcfVpcPublicSubnet_az3.id}"]
+  subnets = ["${var.PcfVpcPublicSubnet_az1}","${var.PcfVpcPublicSubnet_az2}","${var.PcfVpcPublicSubnet_az3}"]
   security_groups = ["${aws_security_group.PcfHttpElbSg.id}"]
 
   listener {
@@ -31,7 +31,7 @@ resource "aws_elb" "PcfHttpElb" {
 
 resource "aws_elb" "PcfSshElb" {
   name = "${var.prefix}-Pcf-Ssh-Elb"
-  subnets = ["${aws_subnet.PcfVpcPublicSubnet_az1.id}","${aws_subnet.PcfVpcPublicSubnet_az2.id}","${aws_subnet.PcfVpcPublicSubnet_az3.id}"]
+  subnets = ["${var.PcfVpcPublicSubnet_az1}","${var.PcfVpcPublicSubnet_az2}","${var.PcfVpcPublicSubnet_az3}"]
   security_groups = ["${aws_security_group.PcfSshElbSg.id}"]
 
   listener {
@@ -54,7 +54,7 @@ resource "aws_elb" "PcfSshElb" {
 
 resource "aws_elb" "PcfTcpElb" {
   name = "${var.prefix}-Pcf-Tcp-Elb"
-  subnets = ["${aws_subnet.PcfVpcPublicSubnet_az1.id}","${aws_subnet.PcfVpcPublicSubnet_az2.id}","${aws_subnet.PcfVpcPublicSubnet_az3.id}"]
+  subnets = ["${var.PcfVpcPublicSubnet_az1}","${var.PcfVpcPublicSubnet_az2}","${var.PcfVpcPublicSubnet_az3}"]
   security_groups = ["${aws_security_group.PcfTcpElbSg.id}"]
 
   listener {

@@ -14,7 +14,7 @@ output "az3" {
     value = "${var.az3}"
 }
 output "vpc_id" {
-    value = "${aws_vpc.PcfVpc.id}"
+    value = "${var.aws_vpc_PcfVpc}"
 }
 output "vpc_cidr" {
     value = "${var.vpc_cidr}"
@@ -72,19 +72,19 @@ output "services_subnet_gw_az1" {
 }
 
 output "public_subnet_id_az1" {
-    value = "${aws_subnet.PcfVpcPublicSubnet_az1.id}"
+    value = "${var.PcfVpcPublicSubnet_az1}"
 }
 output "ert_subnet_id_az1" {
-    value = "${aws_subnet.PcfVpcErtSubnet_az1.id}"
+    value = "${var.PcfVpcErtSubnet_az1}"
 }
 output "rds_subnet_id_az1" {
-    value = "${aws_subnet.PcfVpcRdsSubnet_az1.id}"
+    value = "${var.PcfVpcRdsSubnet_az1}"
 }
 output "services_subnet_id_az1" {
-    value = "${aws_subnet.PcfVpcServicesSubnet_az1.id}"
+    value = "${var.PcfVpcServicesSubnet_az1}"
 }
 output "infra_subnet_id_az1" {
-    value = "${aws_subnet.PcfVpcInfraSubnet_az1.id}"
+    value = "${var.PcfVpcInfraSubnet_az1}"
 }
 output "infra_subnet_cidr_az1" {
     value = "${var.infra_subnet_cidr_az1}"
@@ -116,16 +116,16 @@ output "services_subnet_gw_az2" {
     value = "${cidrhost("${var.services_subnet_cidr_az2}", 1)}"
 }
 output "public_subnet_id_az2" {
-    value = "${aws_subnet.PcfVpcPublicSubnet_az2.id}"
+    value = "${var.PcfVpcPublicSubnet_az2}"
 }
 output "ert_subnet_id_az2" {
-    value = "${aws_subnet.PcfVpcErtSubnet_az2.id}"
+    value = "${var.PcfVpcErtSubnet_az2}"
 }
 output "rds_subnet_id_az2" {
-    value = "${aws_subnet.PcfVpcRdsSubnet_az2.id}"
+    value = "${var.PcfVpcRdsSubnet_az2}"
 }
 output "services_subnet_id_az2" {
-    value = "${aws_subnet.PcfVpcServicesSubnet_az2.id}"
+    value = "${var.PcfVpcServicesSubnet_az2}"
 }
 
 #AZ3
@@ -149,19 +149,19 @@ output "services_subnet_cidr_az3" {
 }
 
 output "public_subnet_id_az3" {
-    value = "${aws_subnet.PcfVpcPublicSubnet_az3.id}"
+    value = "${var.PcfVpcPublicSubnet_az3}"
 }
 output "services_subnet_gw_az3" {
     value = "${cidrhost("${var.services_subnet_cidr_az3}", 1)}"
 }
 output "ert_subnet_id_az3" {
-    value = "${aws_subnet.PcfVpcErtSubnet_az3.id}"
+    value = "${var.PcfVpcErtSubnet_az3}"
 }
 output "rds_subnet_id_az3" {
-    value = "${aws_subnet.PcfVpcRdsSubnet_az3.id}"
+    value = "${var.PcfVpcRdsSubnet_az3}"
 }
 output "services_subnet_id_az3" {
-    value = "${aws_subnet.PcfVpcServicesSubnet_az3.id}"
+    value = "${var.PcfVpcServicesSubnet_az3}"
 }
 
 # RDS info
