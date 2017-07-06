@@ -9,6 +9,8 @@ inputs:
   - name: pcf-pipelines 
   - name: terraform-state
 params:
+  aws_access_key:
+  aws_secret_key:
   ERT_DOMAIN:
   OPSMAN_USER:
   OPSMAN_PASSWORD:

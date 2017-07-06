@@ -2,8 +2,8 @@
 
 set -eu
 
-aws_access_key_id=`terraform state show -state terraform-state/terraform.tfstate aws_iam_access_key.pcf_iam_user_access_key | grep ^id | awk '{print $3}'`
-aws_secret_access_key=`terraform state show -state terraform-state/terraform.tfstate aws_iam_access_key.pcf_iam_user_access_key | grep ^secret | awk '{print $3}'`
+#aws_access_key_id=`terraform state show -state terraform-state/terraform.tfstate aws_iam_access_key.pcf_iam_user_access_key | grep ^id | awk '{print $3}'`
+#aws_secret_access_key=`terraform state show -state terraform-state/terraform.tfstate aws_iam_access_key.pcf_iam_user_access_key | grep ^secret | awk '{print $3}'`
 rds_password=`terraform state show -state terraform-state/terraform.tfstate aws_db_instance.pcf_rds | grep ^password | awk '{print $3}'`
 
 while read -r line
@@ -15,8 +15,8 @@ done < <(terraform output -state terraform-state/terraform.tfstate)
 set +e
 read -r -d '' iaas_configuration <<EOF
 {
-  "access_key_id": "$aws_access_key_id",
-  "secret_access_key": "$aws_secret_access_key",
+  "access_key_id": "$aws_access_key",
+  "secret_access_key": "$aws_secret_key",
   "vpc_id": "$vpc_id",
   "security_group": "$pcf_security_group",
   "key_pair_name": "$AWS_KEY_NAME",
@@ -43,8 +43,8 @@ read -r -d '' director_configuration <<EOF
   "s3_blobstore_options": {
     "endpoint": "$S3_ENDPOINT",
     "bucket_name": "$s3_pcf_bosh",
-    "access_key": "$aws_access_key_id",
-    "secret_key": "$aws_secret_access_key",
+    "access_key": "$aws_access_key",
+    "secret_key": "$aws_secret_key",
     "signature_version": "2",
     "region": "$AWS_REGION"
   }
