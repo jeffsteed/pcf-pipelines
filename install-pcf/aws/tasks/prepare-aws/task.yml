@@ -46,6 +46,7 @@ params:
   TF_VAR_PcfVpcErtSubnet_az2:
   TF_VAR_PcfVpcErtSubnet_az3:
   TF_VAR_PcfVpcInfraSubnet_az1:
+  TF_VAR_PcfVpcAccessSubnet_az1:
   TF_VAR_PcfVpcPublicSubnet_az1:
   TF_VAR_PcfVpcPublicSubnet_az2:
   TF_VAR_PcfVpcPublicSubnet_az3:
