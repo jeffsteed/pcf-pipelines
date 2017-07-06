@@ -140,7 +140,7 @@ TF_VAR_PcfVpcRdsSubnet_az3: subnet-9e162aa2
 TF_VAR_rds_subnet_group: pcf-dojo-sandbox-rds
 TF_VAR_access_subnet_cidr_az1: 172.27.95.128/28
 TF_VAR_PcfVpcAccessSubnet_az1: subnet-a64538ee
-TF_VAR_opsman_ip_az1: 172.27.95.130
+TF_VAR_opsman_ip_az1: 172.27.95.135
 TF_VAR_nat_ip_az1: 172.27.95.181
 TF_VAR_nat_ip_az2: 172.27.95.198
 TF_VAR_nat_ip_az3: 172.27.95.212
