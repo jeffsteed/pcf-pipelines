@@ -13,7 +13,6 @@ variable "PcfVpcPublicSubnet_az3" {}
 variable "PcfVpcRdsSubnet_az1" {}
 variable "PcfVpcRdsSubnet_az2" {}
 variable "PcfVpcRdsSubnet_az3" {}
-variable "rds_subnet_group" {}
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
 variable "aws_cert_arn" {}
