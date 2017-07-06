@@ -133,6 +133,8 @@ jobs:
       TF_VAR_PcfVpcServicesSubnet_az1: {{TF_VAR_PcfVpcServicesSubnet_az1}}
       TF_VAR_PcfVpcServicesSubnet_az2: {{TF_VAR_PcfVpcServicesSubnet_az2}}
       TF_VAR_PcfVpcServicesSubnet_az3: {{TF_VAR_PcfVpcServicesSubnet_az3}}
+      TF_VAR_access_subnet_cidr_az1: {{TF_VAR_access_subnet_cidr_az1}}      
+      TF_VAR_PcfVpcAccessSubnet_az1: {{TF_VAR_PcfVpcAccessSubnet_az1}}    
       TF_VAR_aws_vpc_PcfVpc: {{TF_VAR_aws_vpc_PcfVpc}}
       TF_VAR_rds_subnet_group: {{TF_VAR_rds_subnet_group}} 
       OPSMAN_ALLOW_SSH_CIDR_RANGES: {{opsman_allow_ssh_cidr_ranges}}
