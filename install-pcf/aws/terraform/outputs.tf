@@ -166,15 +166,16 @@ output "services_subnet_id_az3" {
 
 # RDS info
 
-output "db_host" {
-    value = "${aws_db_instance.pcf_rds.address}"
-}
-output "db_port" {
-    value = "${aws_db_instance.pcf_rds.port}"
-}
-output "db_username" {
-    value = "${aws_db_instance.pcf_rds.username}"
-}
-output "db_database" {
-    value = "${aws_db_instance.pcf_rds.name}"
-}
+# Commented out until we get rds permissions 
+#output "db_host" {
+#    value = "${aws_db_instance.pcf_rds.address}"
+#}
+#output "db_port" {
+#    value = "${aws_db_instance.pcf_rds.port}"
+#}
+#output "db_username" {
+#    value = "${aws_db_instance.pcf_rds.username}"
+#}
+#output "db_database" {
+#    value = "${aws_db_instance.pcf_rds.name}"
+#}
