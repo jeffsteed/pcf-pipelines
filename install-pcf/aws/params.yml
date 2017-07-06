@@ -65,7 +65,7 @@ TF_VAR_az2: us-east-1d
 TF_VAR_az3: us-east-1e
 
 S3_ENDPOINT: https://s3.amazonaws.com
-S3_OUTPUT_BUCKET:
+S3_OUTPUT_BUCKET: pcf-dojo-sb-auto-terraform
 ERT_DOMAIN: us-east-1.arity-sandbox.com
 OPSMAN_USER: admin
 OPSMAN_PASSWORD: welcome1
@@ -73,7 +73,6 @@ OPSMAN_URI: opsmgr.cf.us-east-1.arity-sandbox.com
 PEM: (( vault "secret/pcfops/tmpsandbox/ssh:bastion-private-key" )) 
 ERT_SSL_CERT:
 ERT_SSL_KEY:
-ROUTE_53_ZONE_ID:
 
 # if the `opsman_allow` cidr ranges are left blank then there will not be any
 # external ingress to ops manager defined in the security group
