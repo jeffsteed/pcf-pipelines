@@ -6,6 +6,7 @@ variable "PcfVpcServicesSubnet_az1" {}
 variable "PcfVpcServicesSubnet_az2" {}
 variable "PcfVpcServicesSubnet_az3" {}
 variable "PcfVpcInfraSubnet_az1" {}
+variable "PcfVpcAccessSubnet_az1" {}
 variable "PcfVpcPublicSubnet_az1" {}
 variable "PcfVpcPublicSubnet_az2" {}
 variable "PcfVpcPublicSubnet_az3" {}
