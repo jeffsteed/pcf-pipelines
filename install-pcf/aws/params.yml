@@ -66,10 +66,10 @@ TF_VAR_az3: us-east-1e
 
 S3_ENDPOINT: https://s3.amazonaws.com
 S3_OUTPUT_BUCKET: pcf-dojo-sb-auto-terraform
-ERT_DOMAIN: us-east-1.arity-sandbox.com
+ERT_DOMAIN: cf.us-east-1.arity-sandbox.com
 OPSMAN_USER: admin
 OPSMAN_PASSWORD: welcome1
-OPSMAN_URI: opsmgr.cf.us-east-1.arity-sandbox.com
+OPSMAN_URI: opsman.cf.us-east-1.arity-sandbox.com
 PEM: (( vault "secret/pcfops/tmpsandbox/ssh:bastion-private-key" )) 
 ERT_SSL_CERT:
 ERT_SSL_KEY:
