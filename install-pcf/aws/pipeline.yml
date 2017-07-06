@@ -120,6 +120,21 @@ jobs:
       TF_VAR_nat_ip_az1: {{TF_VAR_nat_ip_az1}}
       TF_VAR_nat_ip_az2: {{TF_VAR_nat_ip_az2}}
       TF_VAR_nat_ip_az3: {{TF_VAR_nat_ip_az3}}
+      TF_VAR_PcfVpcErtSubnet_az1 {{TF_VAR_PcfVpcErtSubnet_az1}}
+      TF_VAR_PcfVpcErtSubnet_az2 {{TF_VAR_PcfVpcErtSubnet_az2}}
+      TF_VAR_PcfVpcErtSubnet_az3 {{TF_VAR_PcfVpcErtSubnet_az3}}
+      TF_VAR_PcfVpcInfraSubnet_az1 {{TF_VAR_PcfVpcInfraSubnet_az1}}
+      TF_VAR_PcfVpcPublicSubnet_az1 {{TF_VAR_PcfVpcPublicSubnet_az1}}
+      TF_VAR_PcfVpcPublicSubnet_az2 {{TF_VAR_PcfVpcPublicSubnet_az2}}
+      TF_VAR_PcfVpcPublicSubnet_az3 {{TF_VAR_PcfVpcPublicSubnet_az3}}
+      TF_VAR_PcfVpcRdsSubnet_az1 {{TF_VAR_PcfVpcRdsSubnet_az1}}
+      TF_VAR_PcfVpcRdsSubnet_az2 {{TF_VAR_PcfVpcRdsSubnet_az2}}
+      TF_VAR_PcfVpcRdsSubnet_az3 {{TF_VAR_PcfVpcRdsSubnet_az3}}
+      TF_VAR_PcfVpcServicesSubnet_az1 {{TF_VAR_PcfVpcServicesSubnet_az1}}
+      TF_VAR_PcfVpcServicesSubnet_az2 {{TF_VAR_PcfVpcServicesSubnet_az2}}
+      TF_VAR_PcfVpcServicesSubnet_az3 {{TF_VAR_PcfVpcServicesSubnet_az3}}
+      TF_VAR_aws_vpc_PcfVpc {{TF_VAR_aws_vpc_PcfVpc}}
+      TF_VAR_rds_subnet_group {{TF_VAR_rds_subnet_group}} 
       OPSMAN_ALLOW_SSH_CIDR_RANGES: {{opsman_allow_ssh_cidr_ranges}}
       OPSMAN_ALLOW_HTTPS_CIDR_RANGES: {{opsman_allow_https_cidr_ranges}}
     ensure:
