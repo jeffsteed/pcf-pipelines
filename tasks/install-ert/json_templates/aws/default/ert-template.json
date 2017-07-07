@@ -136,7 +136,7 @@
         "value": "sys.{{pcf_ert_domain}}"
       },
       ".cloud_controller.apps_domain": {
-        "value": "cfapps.{{pcf_ert_domain}}"
+        "value": "apps.{{pcf_ert_domain}}"
       },
       ".cloud_controller.allow_app_ssh_access": {
         "value": true
@@ -171,7 +171,7 @@
         }
       },
       ".properties.system_blobstore.external.signature_version.value": {
-        "value": "2"
+        "value": "4"
       },
       ".properties.system_blobstore.external.region": {
         "value": "{{aws_region}}"
