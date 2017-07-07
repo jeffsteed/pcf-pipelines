@@ -157,7 +157,7 @@ EOF
 read -r -d '' network_assignment <<EOF
 {
   "singleton_availability_zone": "$az1",
-  "network": "infrastructure"
+  "network": "deployment"
 }
 EOF
 
