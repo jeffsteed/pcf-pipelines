@@ -6,7 +6,7 @@ resource "aws_instance" "opsmman_az1" {
     key_name = "${var.aws_key_name}"
     vpc_security_group_ids = ["${aws_security_group.directorSG.id}"]
     subnet_id = "${var.PcfVpcAccessSubnet_az1}"
-    associate_public_ip_address = true
+    associate_public_ip_address = false 
     private_ip = "${var.opsman_ip_az1}"
     root_block_device {
         volume_size = 100
