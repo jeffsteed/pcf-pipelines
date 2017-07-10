@@ -330,7 +330,6 @@ jobs:
       pcf_ert_domain: {{ERT_DOMAIN}}
       pcf_opsman_admin: {{OPSMAN_USER}}
       pcf_opsman_admin_passwd: {{OPSMAN_PASSWORD}}
-      LOGGREGATOR_ENDPOINT_PORT: {{loggregator_endpoint_port}}
 
   - task: disable-errands
     file: pcf-pipelines/tasks/disable-errands/task.yml

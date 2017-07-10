@@ -144,6 +144,9 @@
       ".cloud_controller.security_event_logging_enabled": {
         "value": true
       },
+      ".properties.logger_endpoint_port": {
+        "value": "4443"
+      },
       ".router.disable_insecure_cookies": {
         "value": false
       },
