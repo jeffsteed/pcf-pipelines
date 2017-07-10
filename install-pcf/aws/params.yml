@@ -20,6 +20,9 @@ ert_major_minor_version: ^1\.10\..*$
 #     nfsbrokerpush
 ert_errands_to_disable: none
 
+# Loggregator Port
+loggregator_endpoint_port: 4443    # Loggegrator Port. Default is 443
+
 # RDS Master Credentials
 db_master_username: admin
 db_master_password: (( vault "secret/pcfops/tmpsandbox/rds-db-password:value" ))

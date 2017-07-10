@@ -126,15 +126,6 @@ jq \
 
   +
 
-  # Loggregator Port
-  {
-    ".properties.logger_endpoint_port": {
-      value: "4443"
-    }
-  }
-
-  +
-
   # TCP Routing
   if $tcp_routing == "enable" then
    {
