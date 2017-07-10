@@ -5,15 +5,8 @@ resource "aws_elb" "PcfHttpElb" {
 
   listener {
     instance_port = 80
-    instance_protocol = "HTTP"
-    lb_port = 443
-    lb_protocol = "HTTPS"
-    ssl_certificate_id = "${var.aws_cert_arn}"
-  }
-  listener {
-    instance_port = 80
     instance_protocol = "TCP"
-    lb_port = 4443
+    lb_port = 443
     lb_protocol = "SSL"
     ssl_certificate_id = "${var.aws_cert_arn}"
   }
