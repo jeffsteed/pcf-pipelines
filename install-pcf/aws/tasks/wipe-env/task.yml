@@ -35,8 +35,11 @@ params:
   TF_VAR_services_subnet_cidr_az3:
   TF_VAR_infra_subnet_cidr_az1:
   TF_VAR_rds_subnet_cidr_az1:
+  TF_VAR_PcfVpcRdsSubnet_az1:
   TF_VAR_rds_subnet_cidr_az2:
+  TF_VAR_PcfVpcRdsSubnet_az2:
   TF_VAR_rds_subnet_cidr_az3:
+  TF_VAR_PcfVpcRdsSubnet_az3:
   OPSMAN_ALLOW_SSH_CIDR_RANGES:
   OPSMAN_ALLOW_HTTPS_CIDR_RANGES:
 run:
