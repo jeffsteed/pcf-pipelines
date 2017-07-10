@@ -280,7 +280,6 @@ jobs:
       terraform_template: default
       terraform_prefix: {{terraform_prefix}}
       S3_ENDPOINT: {{S3_ENDPOINT}}
-      LOGGREGATOR_ENDPOINT_PORT: {{loggregator_endpoint_port}}
       mysql_monitor_recipient_email: {{mysql_monitor_recipient_email}}
       MYSQL_BACKUPS: {{mysql_backups}}
       MYSQL_BACKUPS_SCP_SERVER: {{mysql_backups_scp_server}}
@@ -331,6 +330,7 @@ jobs:
       pcf_ert_domain: {{ERT_DOMAIN}}
       pcf_opsman_admin: {{OPSMAN_USER}}
       pcf_opsman_admin_passwd: {{OPSMAN_PASSWORD}}
+      LOGGREGATOR_ENDPOINT_PORT: {{loggregator_endpoint_port}}
 
   - task: disable-errands
     file: pcf-pipelines/tasks/disable-errands/task.yml
