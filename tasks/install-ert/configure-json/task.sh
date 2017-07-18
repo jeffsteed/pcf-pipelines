@@ -99,6 +99,38 @@ EOF
   mv config.json $json_file
 fi
 
+#Editing this block for LDAP
+if [[ ${AUTHENTICATION_MODE} == "ldap" ]]; then
+  echo "Using LDAP for user authentication"
+  cat > ldap_filter <<-'EOF'
+    .properties.properties.".properties.uaa" = {"value": "ldap"} |
+    .properties.properties.".properties.uaa.ldap.url" = {"value": $ldap_url} |
+    .properties.properties.".properties.uaa.ldap.credentials" = {"value": {"identity": $ldap_user, "password": $ldap_password} } |
+    .properties.properties.".properties.uaa.ldap.search_base" = {"value": $ldap_search_base} |
+    .properties.properties.".properties.uaa.ldap.search_filter" = {"value": $ldap_search_filter} |
+    .properties.properties.".properties.uaa.ldap.group_search_base" = {"value": $ldap_group_search_base} |
+    .properties.properties.".properties.uaa.ldap.group_search_filter" = {"value": $ldap_group_search_filter}
+    .properties.properties.".properties.uaa.ldap.mail_attribute_name" = {"value": $ldap_mail_attr_name}
+    .properties.properties.".properties.uaa.ldap.first_name_attribute" = {"value": $ldap_first_name_attr}
+    .properties.properties.".properties.uaa.ldap.last_name_attribute" = {"value": $ldap_last_name_attr}
+EOF
+
+  jq \
+    --arg ldap_url "$LDAP_URL" \
+    --arg ldap_user "$LDAP_USER" \
+    --arg ldap_password "$LDAP_PWD" \
+    --arg ldap_search_base "$SEARCH_BASE" \
+    --arg ldap_search_filter "$SEARCH_FILTER" \
+    --arg ldap_group_search_base "$GROUP_SEARCH_BASE" \
+    --arg ldap_group_search_filter "$GROUP_SEARCH_FILTER" \
+    --arg ldap_mail_attr_name "$MAIL_ATTR_NAME" \
+    --arg ldap_first_name_attr "$FIRST_NAME_ATTR" \
+    --arg ldap_last_name_attr "$LAST_NAME_ATTR" \
+    --from-file ldap_filter \
+    $json_file > config.json
+  mv config.json $json_file
+fi
+
 cat > cert_filter <<-'EOF'
   .properties.properties.".properties.networking_point_of_entry.external_ssl.ssl_rsa_certificate".value = {
     "cert_pem": $cert_pem,
