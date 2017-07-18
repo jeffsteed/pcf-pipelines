@@ -99,6 +99,19 @@ mysql_backups_s3_access_key_id:
 mysql_backups_s3_secret_access_key:
 mysql_backups_s3_cron_schedule:
 
+#LDAP authentication values
+AUTHENTICATION_MODE: ldap
+LDAP_URL: ldap://172.27.95.136:389
+LDAP_USER: pcf-bind@ad.cf.us-east-1.arity-sandbox.com
+LDAP_PWD: (( vault "secret/pcfops/sandbox/ldap:value=password" ))
+SEARCH_BASE: OU=users,OU=Engineering,DC=ad,DC=cf,DC=us-east-1,DC=arity-sandbox,DC=com
+SEARCH_FILTER: sAMAccountName={0}
+GROUP_SEARCH_BASE: OU=groups,OU=Engineering,DC=ad,DC=cf,DC=us-east-1,DC=arity-sandbox,DC=com
+GROUP_SEARCH_FILTER: member={0}
+MAIL_ATTR_NAME: mail
+FIRST_NAME_ATTR: givenName
+LAST_NAME_ATTR: sn
+
 # VPC Info
 TF_VAR_aws_vpc_PcfVpc: vpc-9aa325e3
 
