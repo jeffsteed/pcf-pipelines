@@ -109,9 +109,9 @@ if [[ ${AUTHENTICATION_MODE} == "ldap" ]]; then
     .properties.properties.".properties.uaa.ldap.search_base" = {"value": $ldap_search_base} |
     .properties.properties.".properties.uaa.ldap.search_filter" = {"value": $ldap_search_filter} |
     .properties.properties.".properties.uaa.ldap.group_search_base" = {"value": $ldap_group_search_base} |
-    .properties.properties.".properties.uaa.ldap.group_search_filter" = {"value": $ldap_group_search_filter}
-    .properties.properties.".properties.uaa.ldap.mail_attribute_name" = {"value": $ldap_mail_attr_name}
-    .properties.properties.".properties.uaa.ldap.first_name_attribute" = {"value": $ldap_first_name_attr}
+    .properties.properties.".properties.uaa.ldap.group_search_filter" = {"value": $ldap_group_search_filter} |
+    .properties.properties.".properties.uaa.ldap.mail_attribute_name" = {"value": $ldap_mail_attr_name} |
+    .properties.properties.".properties.uaa.ldap.first_name_attribute" = {"value": $ldap_first_name_attr} |
     .properties.properties.".properties.uaa.ldap.last_name_attribute" = {"value": $ldap_last_name_attr}
 EOF
 
