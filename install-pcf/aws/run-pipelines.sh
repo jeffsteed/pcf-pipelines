@@ -1,11 +1,13 @@
 #!/bin/bash
 
-mkdir ~/pcf-pipelines/install-pcf/aws/temp
+# Run from current directory
 
-spruce merge ~/pcf-pipelines/install-pcf/aws/params.yml > ~/pcf-pipelines/install-pcf/aws/temp/params.yml
+mkdir ./temp
 
-fly -t sandbox set-pipeline -n -p install-pcf --config ~/pcf-pipelines/install-pcf/aws/pipeline.yml --load-vars-from ~/pcf-pipelines/install-pcf/aws/temp/params.yml
+spruce merge params.yml > ./temp/params.yml
+
+fly -t sandbox set-pipeline -n -p install-pcf --config pipeline.yml --load-vars-from ./temp/params.yml
 
 fly -t sandbox unpause-pipeline -p install-pcf
 
-rm -rf ~/pcf-pipelines/install-pcf/aws/temp
+rm -rf ./temp
