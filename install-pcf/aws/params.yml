@@ -105,7 +105,7 @@ LDAP_URL: ldap://172.27.95.136:389
 LDAP_USER: pcf-bind@ad.cf.us-east-1.arity-sandbox.com
 LDAP_PWD: (( vault "secret/pcfops/sandbox/ldap/password:value" ))
 SEARCH_BASE: OU=users,OU=Engineering,DC=ad,DC=cf,DC=us-east-1,DC=arity-sandbox,DC=com
-SEARCH_FILTER: sAMAccountName={0}
+SEARCH_FILTER: (&(sAMAccountName={0})(memberOf=CN=pcf-users,OU=groups,OU=Engineering,DC=ad,DC=cf,DC=us-east-1,DC=arity-sandbox,DC=com))
 GROUP_SEARCH_BASE: OU=groups,OU=Engineering,DC=ad,DC=cf,DC=us-east-1,DC=arity-sandbox,DC=com
 GROUP_SEARCH_FILTER: member={0}
 MAIL_ATTR_NAME: mail
