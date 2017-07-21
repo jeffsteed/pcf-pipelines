@@ -71,8 +71,8 @@ OPSMAN_USER: admin
 OPSMAN_PASSWORD: welcome1
 OPSMAN_URI: opsman.cf.us-east-1.arity-sandbox.com
 PEM: (( vault "secret/pcfops/tmpsandbox/ssh:bastion-private-key" )) 
-ERT_SSL_CERT:
-ERT_SSL_KEY:
+ERT_SSL_CERT: (( vault "secret/pcfops/tmpsandbox/us-east-1/ert-ssl-cert:value" ))
+ERT_SSL_KEY: (( vault "secret/pcfops/tmpsandbox/us-east-1/ert-ssl-key:value" ))
 
 # if the `opsman_allow` cidr ranges are left blank then there will not be any
 # external ingress to ops manager defined in the security group

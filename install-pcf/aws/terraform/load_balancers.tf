@@ -4,21 +4,19 @@ resource "aws_elb" "PcfHttpElb" {
   security_groups = ["${aws_security_group.PcfHttpElbSg.id}"]
 
    listener {
-    instance_port = 80
-    instance_protocol = "HTTP"
+    instance_port = 443
+    instance_protocol = "TCP"
     lb_port = 443
-    lb_protocol = "HTTPS"
-    ssl_certificate_id = "${var.aws_cert_arn}"
+    lb_protocol = "TCP"
   }
   listener {
-    instance_port = 80
+    instance_port = 443
     instance_protocol = "TCP"
     lb_port = 4443
-    lb_protocol = "SSL"
-    ssl_certificate_id = "${var.aws_cert_arn}"
+    lb_protocol = "TCP"
   }
   health_check {
-    target = "TCP:80"
+    target = "TCP:443"
     timeout = 5
     interval = 30
     unhealthy_threshold = 2
