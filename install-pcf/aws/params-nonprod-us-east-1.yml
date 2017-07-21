@@ -66,11 +66,11 @@ TF_VAR_az2: us-east-1d
 TF_VAR_az3: us-east-1e
 
 S3_ENDPOINT: https://s3.amazonaws.com
-S3_OUTPUT_BUCKET: pcf-dojo-sb-auto-terraform
-ERT_DOMAIN: cf.us-east-1.arity-sandbox.com
+S3_OUTPUT_BUCKET: pcf-nonprod-us-east-1-auto-terraform
+ERT_DOMAIN: nonprod.us-east-1.cf.arity.cloud
 OPSMAN_USER: admin
-OPSMAN_PASSWORD: welcome1
-OPSMAN_URI: opsman.cf.us-east-1.arity-sandbox.com
+OPSMAN_PASSWORD: (( vault "secret/pcfops/nonprod/us-east-1/opsman-password:value" ))
+OPSMAN_URI: opsman.nonprod.us-east-1.cf.arity.cloud
 PEM: (( vault "secret/pcfops/nonprod/ssh/bosh-key:value" )) 
 ERT_SSL_CERT: (( vault "secret/pcfops/nonprod/us-east-1/ert-ssl-cert:value" ))
 ERT_SSL_KEY: (( vault "secret/pcfops/nonprod/us-east-1/ert-ssl-key:value" ))
@@ -81,7 +81,7 @@ ERT_SSL_KEY: (( vault "secret/pcfops/nonprod/us-east-1/ert-ssl-key:value" ))
 opsman_allow_ssh_cidr_ranges:
 opsman_allow_https_cidr_ranges: 
 
-mysql_monitor_recipient_email: nobody@aridy.com # Email address for sending mysql monitor notifications
+mysql_monitor_recipient_email: nobody@arity.com # Email address for sending mysql monitor notifications
 mysql_backups: disable   # Whether to enable MySQL backups. (disable|s3|scp)
 
 #SCP backup config params (leave empty values if you're not using scp
@@ -101,59 +101,74 @@ mysql_backups_s3_secret_access_key:
 mysql_backups_s3_cron_schedule:
 
 #LDAP authentication values
-AUTHENTICATION_MODE: ldap
-LDAP_URL: ldap://172.27.95.136:389
-LDAP_USER: pcf-bind@ad.cf.us-east-1.arity-sandbox.com
-LDAP_PWD: (( vault "secret/pcfops/nonprod/ldap/password:value" ))
-SEARCH_BASE: OU=users,OU=Engineering,DC=ad,DC=cf,DC=us-east-1,DC=arity-sandbox,DC=com
-SEARCH_FILTER: (&(sAMAccountName={0})(memberOf=CN=pcf-users,OU=groups,OU=Engineering,DC=ad,DC=cf,DC=us-east-1,DC=arity-sandbox,DC=com))
-GROUP_SEARCH_BASE: OU=groups,OU=Engineering,DC=ad,DC=cf,DC=us-east-1,DC=arity-sandbox,DC=com
-GROUP_SEARCH_FILTER: member={0}
-MAIL_ATTR_NAME: mail
-FIRST_NAME_ATTR: givenName
-LAST_NAME_ATTR: sn
+AUTHENTICATION_MODE: 
+LDAP_URL:
+LDAP_USER: 
+LDAP_PWD: 
+SEARCH_BASE: 
+SEARCH_FILTER: 
+GROUP_SEARCH_BASE: 
+GROUP_SEARCH_FILTER: 
+MAIL_ATTR_NAME: 
+FIRST_NAME_ATTR: 
+LAST_NAME_ATTR:
+
+#AUTHENTICATION_MODE: ldap
+#LDAP_URL: ldap://172.26.95.136:389
+#LDAP_USER: pcf-bind@ad.cf.us-east-1.arity-sandbox.com
+#LDAP_PWD: (( vault "secret/pcfops/nonprod/ldap/password:value" ))
+#SEARCH_BASE: OU=users,OU=Engineering,DC=ad,DC=cf,DC=us-east-1,DC=arity-sandbox,DC=com
+#SEARCH_FILTER: (&(sAMAccountName={0})(memberOf=CN=pcf-users,OU=groups,OU=Engineering,DC=ad,DC=cf,DC=us-east-1,DC=arity-sandbox,DC=com))
+#GROUP_SEARCH_BASE: OU=groups,OU=Engineering,DC=ad,DC=cf,DC=us-east-1,DC=arity-sandbox,DC=com
+#GROUP_SEARCH_FILTER: member={0}
+#MAIL_ATTR_NAME: mail
+#FIRST_NAME_ATTR: givenName
+#LAST_NAME_ATTR: sn
 
 # VPC Info
 TF_VAR_aws_vpc_PcfVpc: vpc-9aa325e3
 
 #SUBNETS
-TF_VAR_vpc_cidr: 172.27.88.0/21
-TF_VAR_public_subnet_cidr_az1: 172.27.95.176/28
-TF_VAR_PcfVpcPublicSubnet_az1: subnet-11473a59
-TF_VAR_public_subnet_cidr_az2: 172.27.95.192/28
-TF_VAR_PcfVpcPublicSubnet_az2: subnet-440db01e 
-TF_VAR_public_subnet_cidr_az3: 172.27.95.208/28
-TF_VAR_PcfVpcPublicSubnet_az3: subnet-45102c79
-TF_VAR_ert_subnet_cidr_az1: 172.27.88.0/25
-TF_VAR_PcfVpcErtSubnet_az1: subnet-08bdc040
-ert_subnet_reserved_ranges_z1: 172.27.88.1 - 172.27.88.14
-TF_VAR_ert_subnet_cidr_az2: 172.27.89.0/25
-TF_VAR_PcfVpcErtSubnet_az2: subnet-9917aac3
-ert_subnet_reserved_ranges_z2: 172.27.89.1 - 172.27.89.14
-TF_VAR_ert_subnet_cidr_az3: 172.27.90.0/25
-TF_VAR_PcfVpcErtSubnet_az3: subnet-2a0d3116
-ert_subnet_reserved_ranges_z3: 172.27.90.1 - 172.27.90.14
-TF_VAR_services_subnet_cidr_az1: 172.27.94.0/26
-TF_VAR_PcfVpcServicesSubnet_az1: subnet-80413cc8
-services_subnet_reserved_ranges_z1: 172.27.94.1 - 172.27.94.6
-TF_VAR_services_subnet_cidr_az2: 172.27.94.64/26
-TF_VAR_PcfVpcServicesSubnet_az2: subnet-2910ad73
-services_subnet_reserved_ranges_z2: 172.27.94.65 - 172.27.94.71
-TF_VAR_services_subnet_cidr_az3: 172.27.94.128/26
-TF_VAR_PcfVpcServicesSubnet_az3: subnet-ff172bc3
-services_subnet_reserved_ranges_z3: 172.27.94.129 - 172.27.94.135
-TF_VAR_infra_subnet_cidr_az1: 172.27.88.0/25
-TF_VAR_PcfVpcInfraSubnet_az1: subnet-08bdc040
-infra_subnet_reserved_ranges_z1: 172.27.88.1 - 172.27.88.6, 172.27.88.15 - 172.27.88.128
-TF_VAR_rds_subnet_cidr_az1: 172.27.94.192/27
-TF_VAR_PcfVpcRdsSubnet_az1: subnet-efb8c5a7
-TF_VAR_rds_subnet_cidr_az2: 172.27.94.224/27
-TF_VAR_PcfVpcRdsSubnet_az2: subnet-050cb15f
-TF_VAR_rds_subnet_cidr_az3: 172.27.95.0/27
-TF_VAR_PcfVpcRdsSubnet_az3: subnet-9e162aa2
-TF_VAR_access_subnet_cidr_az1: 172.27.95.128/28
-TF_VAR_PcfVpcAccessSubnet_az1: subnet-a64538ee
-TF_VAR_opsman_ip_az1: 172.27.95.135
-TF_VAR_nat_ip_az1: 172.27.95.181
-TF_VAR_nat_ip_az2: 172.27.95.198
-TF_VAR_nat_ip_az3: 172.27.95.212
+TF_VAR_vpc_cidr: 172.26.80.0/21
+TF_VAR_public_subnet_cidr_az1: 172.26.86.96/27
+TF_VAR_PcfVpcPublicSubnet_az1: subnet-4846d564
+TF_VAR_public_subnet_cidr_az2: 172.26.86.128/27
+TF_VAR_PcfVpcPublicSubnet_az2: subnet-88511bc0 
+TF_VAR_public_subnet_cidr_az3: 172.26.86.160/27
+TF_VAR_PcfVpcPublicSubnet_az3: subnet-2122211d
+TF_VAR_ert_subnet_cidr_az1: 172.26.80.0/25
+TF_VAR_PcfVpcErtSubnet_az1: subnet-4f43d063
+ert_subnet_reserved_ranges_z1: 172.26.80.1 - 172.26.80.14
+TF_VAR_ert_subnet_cidr_az2: 172.26.80.128/25
+TF_VAR_PcfVpcErtSubnet_az2: subnet-916b21d9
+ert_subnet_reserved_ranges_z2: 172.26.80.129 - 172.26.80.142
+TF_VAR_ert_subnet_cidr_az3: 172.26.81.0/25
+TF_VAR_PcfVpcErtSubnet_az3: subnet-3c292a00
+ert_subnet_reserved_ranges_z3: 172.26.81.1 - 172.26.81.14
+TF_VAR_services_subnet_cidr_az1: 172.26.84.128/26
+TF_VAR_PcfVpcServicesSubnet_az1: subnet-b347d49f
+services_subnet_reserved_ranges_z1: 172.26.84.129 - 172.26.84.131
+TF_VAR_services_subnet_cidr_az2: 172.26.84.192/26
+TF_VAR_PcfVpcServicesSubnet_az2: subnet-a7551fef
+services_subnet_reserved_ranges_z2: 172.26.84.193 - 172.26.84.195
+TF_VAR_services_subnet_cidr_az3: 172.26.85.0/26
+TF_VAR_PcfVpcServicesSubnet_az3: subnet-de2526e2
+services_subnet_reserved_ranges_z3: 172.26.85.1 - 172.26.85.3
+TF_VAR_infra_subnet_cidr_az1: 172.26.80.0/25
+TF_VAR_PcfVpcInfraSubnet_az1: subnet-4f43d063
+infra_subnet_reserved_ranges_z1: 172.26.80.1 - 172.26.80.3, 172.26.80.15 - 172.26.80.127
+TF_VAR_rds_subnet_cidr_az1: 172.26.85.64/27
+TF_VAR_PcfVpcRdsSubnet_az1: subnet-ff5dced3
+TF_VAR_rds_subnet_cidr_az2: 172.26.85.96/27
+TF_VAR_PcfVpcRdsSubnet_az2: subnet-3e6c2676
+TF_VAR_rds_subnet_cidr_az3: 172.26.85.128/27
+TF_VAR_PcfVpcRdsSubnet_az3: subnet-19282b25
+TF_VAR_access_subnet_cidr_az1: 172.26.85.160/27
+TF_VAR_PcfVpcAccessSubnet_az1: subnet-b876fde2
+TF_VAR_opsman_ip_az1: 172.26.85.165
+#TF_VAR_nat_ip_az1: 172.26.86.14
+#TF_VAR_nat_ip_az2: 172.26.86.41
+#TF_VAR_nat_ip_az3: 172.26.86.76
+TF_VAR_nat_ip_az1:
+TF_VAR_nat_ip_az2:
+TF_VAR_nat_ip_az3:
