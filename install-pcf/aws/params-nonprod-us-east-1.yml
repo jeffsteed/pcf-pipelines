@@ -65,6 +65,7 @@ TF_VAR_aws_region: us-east-1
 TF_VAR_az1: us-east-1c
 TF_VAR_az2: us-east-1d
 TF_VAR_az3: us-east-1e
+TF_VAR_access_az1: us-east-1a
 
 S3_ENDPOINT: https://s3.amazonaws.com
 S3_OUTPUT_BUCKET: pcf-nonprod-us-east-1-auto-terraform

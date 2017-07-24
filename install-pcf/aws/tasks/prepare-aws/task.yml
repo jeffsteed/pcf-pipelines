@@ -24,6 +24,7 @@ params:
   TF_VAR_az1:
   TF_VAR_az2:
   TF_VAR_az3:
+  TF_VAR_access_az1:
   TF_VAR_vpc_cidr:
   TF_VAR_public_subnet_cidr_az1:
   TF_VAR_public_subnet_cidr_az2:
