@@ -58,6 +58,7 @@ TF_VAR_aws_access_key: (( vault "secret/pcfops/nonprod/aws/access-key:value" ))
 TF_VAR_aws_secret_key: (( vault "secret/pcfops/nonprod/aws/secret-access-key:value" ))
 TF_VAR_aws_key_name: pcf-bosh-nonprod
 # aws_cert_arn not needed if terminating ssl at the goRouter
+TF_VAR_aws_cert_arn: 
 #TF_VAR_aws_cert_arn: arn:aws:acm:us-east-1:996608571400:certificate/569b870b-973d-4d41-b320-18449ca86e17
 TF_VAR_amis_nat: 
 TF_VAR_aws_region: us-east-1
@@ -126,7 +127,7 @@ LAST_NAME_ATTR:
 #LAST_NAME_ATTR: sn
 
 # VPC Info
-TF_VAR_aws_vpc_PcfVpc: vpc-9aa325e3
+TF_VAR_aws_vpc_PcfVpc: vpc-141a816d
 
 #SUBNETS
 TF_VAR_vpc_cidr: 172.26.80.0/21
