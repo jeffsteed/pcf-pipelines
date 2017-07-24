@@ -69,10 +69,10 @@ TF_VAR_access_az1: us-east-1a
 
 S3_ENDPOINT: https://s3.amazonaws.com
 S3_OUTPUT_BUCKET: pcf-nonprod-us-east-1-auto-terraform
-ERT_DOMAIN: nonprod.us-east-1.cf.arity.cloud
+ERT_DOMAIN: us-east-1.nonprod.cf.arity.cloud
 OPSMAN_USER: admin
 OPSMAN_PASSWORD: (( vault "secret/pcfops/nonprod/us-east-1/opsman-password:value" ))
-OPSMAN_URI: opsman.nonprod.us-east-1.cf.arity.cloud
+OPSMAN_URI: opsman.us-east-1.nonprod.cf.arity.cloud
 PEM: (( vault "secret/pcfops/nonprod/ssh/bosh-key:value" )) 
 ERT_SSL_CERT: (( vault "secret/pcfops/nonprod/us-east-1/ert-ssl-cert:value" ))
 ERT_SSL_KEY: (( vault "secret/pcfops/nonprod/us-east-1/ert-ssl-key:value" ))
