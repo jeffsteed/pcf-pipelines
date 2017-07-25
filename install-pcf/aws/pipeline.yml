@@ -103,6 +103,7 @@ jobs:
       TF_VAR_az2: {{TF_VAR_az2}}
       TF_VAR_az3: {{TF_VAR_az3}}
       TF_VAR_access_az1: {{TF_VAR_access_az1}}
+      TF_VAR_jumpbox_cidr: {{TF_VAR_jumpbox_cidr}}
       TF_VAR_vpc_cidr: {{TF_VAR_vpc_cidr}}
       TF_VAR_public_subnet_cidr_az1: {{TF_VAR_public_subnet_cidr_az1}}
       TF_VAR_public_subnet_cidr_az2: {{TF_VAR_public_subnet_cidr_az2}}
@@ -386,6 +387,7 @@ jobs:
       TF_VAR_az3: {{TF_VAR_az3}}
       TF_VAR_access_az1: {{TF_VAR_access_az1}}
       TF_VAR_aws_vpc_PcfVpc: {{TF_VAR_aws_vpc_PcfVpc}}
+      TF_VAR_jumpbox_cidr: {{TF_VAR_jumpbox_cidr}}
       TF_VAR_vpc_cidr: {{TF_VAR_vpc_cidr}}
       TF_VAR_public_subnet_cidr_az1: {{TF_VAR_public_subnet_cidr_az1}}
       TF_VAR_PcfVpcPublicSubnet_az1: {{TF_VAR_PcfVpcPublicSubnet_az1}}
