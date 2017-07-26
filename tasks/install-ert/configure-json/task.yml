@@ -74,6 +74,7 @@ params:
   MAIL_ATTR_NAME:
   FIRST_NAME_ATTR:
   LAST_NAME_ATTR:
+  LDAP_SSL_CERT:
   db_accountdb_username:
   db_accountdb_password:
   db_networkpolicyserverdb_username:

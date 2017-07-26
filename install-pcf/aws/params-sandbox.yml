@@ -112,6 +112,7 @@ GROUP_SEARCH_FILTER: member={0}
 MAIL_ATTR_NAME: mail
 FIRST_NAME_ATTR: givenName
 LAST_NAME_ATTR: sn
+LDAP_SSL_CERT: (( vault "secret/pcfops/sandbox/ldap/ssl-cert:value" ))
 
 # VPC Info
 TF_VAR_aws_vpc_PcfVpc: vpc-9aa325e3

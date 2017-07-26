@@ -307,6 +307,7 @@ jobs:
       MAIL_ATTR_NAME: {{MAIL_ATTR_NAME}}
       FIRST_NAME_ATTR: {{FIRST_NAME_ATTR}}
       LAST_NAME_ATTR: {{LAST_NAME_ATTR}}
+      LDAP_SSL_CERT: {{LDAP_SSL_CERT}}
       # IaaS Specific for GCP only
       gcp_storage_access_key:
       gcp_storage_secret_key:

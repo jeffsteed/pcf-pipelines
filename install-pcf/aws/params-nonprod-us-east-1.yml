@@ -116,6 +116,7 @@ GROUP_SEARCH_FILTER:
 MAIL_ATTR_NAME: 
 FIRST_NAME_ATTR: 
 LAST_NAME_ATTR:
+LDAP_SSL_CERT: 
 
 #AUTHENTICATION_MODE: ldap
 #LDAP_URL: ldap://172.26.95.136:389
@@ -128,6 +129,7 @@ LAST_NAME_ATTR:
 #MAIL_ATTR_NAME: mail
 #FIRST_NAME_ATTR: givenName
 #LAST_NAME_ATTR: sn
+#LDAP_SSL_CERT: (( vault "secret/pcfops/nonprod/ldap/ssl-cert:value" ))
 
 # VPC Info
 TF_VAR_aws_vpc_PcfVpc: vpc-141a816d

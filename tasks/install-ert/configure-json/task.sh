@@ -112,7 +112,8 @@ if [[ ${AUTHENTICATION_MODE} == "ldap" ]]; then
     .properties.properties.".properties.uaa.ldap.group_search_filter" = {"value": $ldap_group_search_filter} |
     .properties.properties.".properties.uaa.ldap.mail_attribute_name" = {"value": $ldap_mail_attr_name} |
     .properties.properties.".properties.uaa.ldap.first_name_attribute" = {"value": $ldap_first_name_attr} |
-    .properties.properties.".properties.uaa.ldap.last_name_attribute" = {"value": $ldap_last_name_attr}
+    .properties.properties.".properties.uaa.ldap.last_name_attribute" = {"value": $ldap_last_name_attr} |
+    .properties.properties.".properties.uaa.ldap.server_ssl_cert" = {"value": $ldap_server_ssl_cert}
 EOF
 
   jq \
@@ -126,6 +127,7 @@ EOF
     --arg ldap_mail_attr_name "$MAIL_ATTR_NAME" \
     --arg ldap_first_name_attr "$FIRST_NAME_ATTR" \
     --arg ldap_last_name_attr "$LAST_NAME_ATTR" \
+    --arg ldap_server_ssl_cert "$LDAP_SSL_CERT" \
     --from-file ldap_filter \
     $json_file > config.json
   mv config.json $json_file
