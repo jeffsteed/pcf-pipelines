@@ -28,7 +28,7 @@ resources:
 - name: pcf-pipelines
   type: git
   source:
-    uri: git@github.com:jeffsteed/pcf-pipelines.git
+    uri: git@172.26.252.25:arity-pcf/pcf-pipelines.git
     branch: master
     private_key: {{git_private_key}}
 

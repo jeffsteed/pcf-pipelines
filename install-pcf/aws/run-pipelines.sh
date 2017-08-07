@@ -19,4 +19,4 @@ fly -t $CONCOURSE_TARGET set-pipeline -n -p install-pcf --config pipeline.yml --
 
 fly -t $CONCOURSE_TARGET unpause-pipeline -p install-pcf
 
-rm -rf $TEMP_DIR
+#rm -rf $TEMP_DIR
