@@ -1,5 +1,5 @@
 pivnet_token: (( vault "secret/pcfops/pivnet-token:value" ))
-git_private_key: (( vault "secret/pcfops/ssh/github-ssh-private-key:value" ))
+git_private_key: (( vault "secret/pcfops/ssh/gitlab-ssh-private-key:value" ))
 
 #opsman_major_minor_version: ^1\.10\..*$
 opsman_major_minor_version: ^1\.10\.12$
@@ -67,7 +67,7 @@ TF_VAR_az1: us-east-1c
 TF_VAR_az2: us-east-1d
 TF_VAR_az3: us-east-1e
 TF_VAR_access_az1: us-east-1a
-TF_VAR_jumpbox_cidr: 172.26.246.7/32
+TF_VAR_jumpbox_cidr: 172.26.252.4/32
 
 S3_ENDPOINT: https://s3.amazonaws.com
 S3_OUTPUT_BUCKET: pcf-nonprod-us-east-1-auto-terraform
