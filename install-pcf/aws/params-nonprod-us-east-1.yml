@@ -67,7 +67,10 @@ TF_VAR_az1: us-east-1c
 TF_VAR_az2: us-east-1d
 TF_VAR_az3: us-east-1e
 TF_VAR_access_az1: us-east-1a
-TF_VAR_jumpbox_cidr: 172.26.252.4/32
+#TF_VAR_jumpbox_cidr: 172.26.252.4/32
+# For our purposes, jumpbox cidr was not enough, so we are using the entire shared services cidr 
+TF_VAR_shared_services_cidr: 172.26.252.0/25
+TF_VAR_vpn_cidr: 10.0.0.0/8
 
 S3_ENDPOINT: https://s3.amazonaws.com
 S3_OUTPUT_BUCKET: pcf-nonprod-us-east-1-auto-terraform

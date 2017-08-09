@@ -19,7 +19,7 @@ resource "aws_security_group_rule" "allow_directorsg_ingress_default" {
     from_port = 0
     to_port = 0
     protocol = -1
-    cidr_blocks = ["${var.vpc_cidr}","${var.jumpbox_cidr}"]
+    cidr_blocks = ["${var.vpc_cidr}","${var.shared_services_cidr}","${var.vpn_cidr}"]
     security_group_id = "${aws_security_group.directorSG.id}"
 }
 
@@ -93,7 +93,7 @@ resource "aws_security_group" "pcfSG" {
         from_port = 0
         to_port = 0
         protocol = "-1"
-        cidr_blocks = ["${var.vpc_cidr}","${var.jumpbox_cidr}"]
+        cidr_blocks = ["${var.vpc_cidr}","${var.shared_services_cidr}","${var.vpn_cidr}"]
     }
     egress {
         from_port = 0

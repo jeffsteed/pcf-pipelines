@@ -27,6 +27,7 @@ variable "az2" {}
 variable "az3" {}
 variable "access_az1" {}
 variable "jumpbox_cidr" {}
+variable "vpn_cidr" {}
 
 /*
 * used for configuring ingress rules to ops manager vm
