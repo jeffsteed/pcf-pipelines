@@ -374,7 +374,7 @@ jobs:
     - get: pcf-pipelines
     - get: terraform-state
   - task: wipe
-    file: pcf-pipelines/install-pcf/aws/tasks/wipe-env/task.yml
+    file: pcf-pipelines/install-pcf/aws/nonprod-us-east-1/tasks/wipe-env/task.yml
     params:
       OPSMAN_URI: {{OPSMAN_URI}}
       OPSMAN_USERNAME: {{OPSMAN_USER}}
