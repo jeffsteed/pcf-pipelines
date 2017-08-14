@@ -109,9 +109,7 @@ mysql_backups_s3_cron_schedule:
 
 #LDAP authentication values
 AUTHENTICATION_MODE: ldap
-# Use these DNS once the opsman director has the correct DNS to resolve
-#LDAP_URL: ldaps://ad0-0.svc.arity.com:636 ldaps://ad0-1.svc.arity.com:636
-LDAP_URL: ldaps://172.26.252.20:636
+LDAP_URL: ldaps://ad0-0.svc.arity.com:636
 LDAP_USER: pcf-bind@svc.arity.com
 LDAP_PWD: (( vault "secret/pcfops/nonprod/ldaps/password:value" ))
 SEARCH_BASE: OU=Arity OU,DC=svc,DC=arity,DC=com
