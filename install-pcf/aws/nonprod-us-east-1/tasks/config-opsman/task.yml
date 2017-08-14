@@ -14,4 +14,4 @@ params:
   OPSMAN_PASSWORD:
 
 run:
-  path: pcf-pipelines/install-pcf/aws/tasks/config-opsman/task.sh
+  path: pcf-pipelines/install-pcf/aws/nonprod-us-east-1/tasks/config-opsman/task.sh
