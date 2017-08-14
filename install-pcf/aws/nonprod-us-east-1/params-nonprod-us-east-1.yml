@@ -113,8 +113,8 @@ LDAP_URL: ldaps://ad0-0.svc.arity.com:636
 LDAP_USER: pcf-bind@svc.arity.com
 LDAP_PWD: (( vault "secret/pcfops/nonprod/ldaps/password:value" ))
 SEARCH_BASE: OU=Arity OU,DC=svc,DC=arity,DC=com
-SEARCH_FILTER: (&(sAMAccountName={0})(memberOf=CN=pcf-users,OU=Test,OU=Groups,OU=CCP OU,DC=svc,DC=arity,DC=com))
-GROUP_SEARCH_BASE: OU=Test,OU=Groups,OU=CCP OU,DC=svc,DC=arity,DC=com
+SEARCH_FILTER: (&(sAMAccountName={0})(memberOf=CN=pcf-users,OU=Groups,OU=Arity OU,DC=svc,DC=arity,DC=com))
+GROUP_SEARCH_BASE: OU=Groups,OU=Arity OU,DC=svc,DC=arity,DC=com
 GROUP_SEARCH_FILTER: member={0}
 MAIL_ATTR_NAME: mail
 FIRST_NAME_ATTR: givenName
