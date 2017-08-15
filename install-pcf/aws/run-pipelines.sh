@@ -14,9 +14,9 @@ mkdir $TEMP_DIR
 
 spruce merge ./${ENVIRONMENT_NAME}/params-${ENVIRONMENT_NAME}.yml > $TEMP_DIR/params.yml
 
-fly -t $CONCOURSE_TARGET set-pipeline -n -p install-pcf --config ./${ENVIRONMENT_NAME}/pipeline.yml --load-vars-from $TEMP_DIR/params.yml
+fly -t $CONCOURSE_TARGET set-pipeline -n -p install-pcf-${ENVIRONMENT_NAME} --config ./${ENVIRONMENT_NAME}/pipeline.yml --load-vars-from $TEMP_DIR/params.yml
 
 
-fly -t $CONCOURSE_TARGET unpause-pipeline -p install-pcf
+fly -t $CONCOURSE_TARGET unpause-pipeline -p install-pcf-${ENVIRONMENT_NAME}
 
 rm -rf $TEMP_DIR
