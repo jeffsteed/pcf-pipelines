@@ -12,11 +12,11 @@ fi
 
 mkdir $TEMP_DIR
 
-spruce merge ./${ENVIRONMENT_NAME}/params-${ENVIRONMENT_NAME}.yml > $TEMP_DIR/params.yml
+spruce merge ./${ENVIRONMENT_NAME}/params.yml > $TEMP_DIR/params.yml
 
-fly -t $CONCOURSE_TARGET set-pipeline -n -p install-pcf-${ENVIRONMENT_NAME} --config ./${ENVIRONMENT_NAME}/pipeline.yml --load-vars-from $TEMP_DIR/params.yml
+fly -t $CONCOURSE_TARGET set-pipeline -n -p upgrade-ops-manager-${ENVIRONMENT_NAME} --config ./${ENVIRONMENT_NAME}/pipeline.yml --load-vars-from $TEMP_DIR/params.yml
 
 
-fly -t $CONCOURSE_TARGET unpause-pipeline -p install-pcf-${ENVIRONMENT_NAME}
+fly -t $CONCOURSE_TARGET unpause-pipeline -p upgrade-ops-manager-${ENVIRONMENT_NAME}
 
 rm -rf $TEMP_DIR

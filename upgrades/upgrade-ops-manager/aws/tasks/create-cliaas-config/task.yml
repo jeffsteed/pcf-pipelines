@@ -34,4 +34,4 @@ params:
   AWS_VPC_ID:
 
 run:
-  path: pcf-pipelines/upgrade-ops-manager/aws/tasks/create-cliaas-config/task.sh
+  path: pcf-pipelines/upgrades/upgrade-ops-manager/aws/tasks/create-cliaas-config/task.sh
