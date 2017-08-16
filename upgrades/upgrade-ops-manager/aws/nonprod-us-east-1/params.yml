@@ -16,7 +16,7 @@
 
 # Interval to check on new releases from Pivotal Network
 # eg. 2h, 3h45m, 3000s
-check_new_opsman_every: 168h # 1wk
+check_new_opsman_every: 10s #168h # 1wk
 
 git_url: git@172.26.252.25:arity-pcf/pcf-pipelines.git
 git_private_key: (( vault "secret/pcfops/ssh/gitlab-ssh-private-key:value" ))
