@@ -17,7 +17,7 @@
 # The token used to download the product file from Pivotal Network. Find this
 # on your Pivotal Network profile page:
 # https://network.pivotal.io/users/dashboard/edit-profile
-pivnet_token: CHANGEME
+pivnet_token: (( vault "secret/pcfops/pivnet-token:value" ))
 # The minor product version to track, as a regexp. To track 1.10.x of a product, this would be "^1\.10\..*$"
 product_version_regex: ^1\.10\..*$
 
@@ -25,17 +25,17 @@ product_version_regex: ^1\.10\..*$
 # ------------------------------
 # Credentials for Operations Manager. These are used for uploading, staging,
 # and deploying the product file on Operations Manager.
-opsman_admin_username: CHANGEME
-opsman_admin_password: CHANGEME
-opsman_uri: CHANGEME
+opsman_admin_username: admin
+opsman_admin_password: (( vault "secret/pcfops/nonprod/us-east-1/opsman-password" ))
+opsman_uri: opsman.us-east-1.nonprod.cf.arity.cloud
 
 # The IaaS name for which stemcell to download. This must match the IaaS name
 # within the stemcell to download, e.g. "vsphere"
-iaas_type: CHANGEME
+iaas_type: aws
 
 # Interval to check on new releases from Pivotal Network
 # eg. 2h, 3h45m, 3000s
-pivnet_poll_interval: 1h
+pivnet_poll_interval: 168h # 1wk
 
 # om-linux
 # ------------------------------

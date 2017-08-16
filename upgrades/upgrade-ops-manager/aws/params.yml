@@ -16,23 +16,23 @@
 
 # Interval to check on new releases from Pivotal Network
 # eg. 2h, 3h45m, 3000s
-check_new_opsman_every: CHANGEME
+check_new_opsman_every: 168h # 1wk
 
-git_private_key:
+git_private_key: (( vault "secret/pcfops/ssh/gitlab-ssh-private-key:value" ))
 
 # Ops Manager minor version to track
 opsman_major_minor_version: ^1\.10\..*$
 
 # Pivotal Net Token to download Ops Manager binaries from https://network.pivotal.io
-pivnet_token: CHANGEME
+pivnet_token: (( vault "secret/pcfops/pivnet-token:value" ))
 
 # Task configuration
 
 # AWS Credentials
-aws_access_key_id: CHANGEME
-aws_secret_access_key: CHANGEME
-aws_region: CHANGEME
-aws_vpc_id: CHANGEME
+aws_access_key_id: (( vault "secret/pcfops/nonprod/aws/access-key:value" ))
+aws_secret_access_key: (( vault "secret/pcfops/nonprod/aws/secret-access-key:value" ))
+aws_region: us-east-1
+aws_vpc_id: vpc-141a816d
 
 # Existing Ops Manager VM Name Pattern. This should uniquely filter to a running Ops Manager instance.
 # eg.  myenv-OpsMan

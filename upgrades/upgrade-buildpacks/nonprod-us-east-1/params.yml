@@ -17,11 +17,12 @@
 pivnet_poll_interval: 1h
 
 # Pivotal Net Token to download binaries from https://network.pivotal.io
-pivnet_token: CHANGEME
+pivnet_token: (( vault "secret/pcfops/pivnet-token:value" ))
 
 # Cloud Controller url and credentials - should have admin privileges
-cf_api_uri: CHANGEME
-cf_user: CHANGEME
-cf_password: CHANGEME
+cf_api_uri: api.sys.us-east-1.nonprod.cf.arity.cloud
+cf_user: admin
+cf_password: (( vault "secret/pcfops/nonprod/us-east-1/uaa-admin-password:value" ))
 
-git_private_key:
+git_private_key: (( vault "secret/pcfops/ssh/gitlab-ssh-private-key:value" ))
+git_url: git@172.26.252.25:arity-pcf/pcf-pipelines.git
