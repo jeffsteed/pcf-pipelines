@@ -43,4 +43,4 @@ opsman_passphrase: (( vault "secret/pcfops/nonprod/us-east-1/opsman-password:val
 
 # Ops Manager Url
 # eg. https://myopsman.mydomain.com
-opsman_domain_or_ip_address: 172.26.85.165
+opsman_domain_or_ip_address: opsman.us-east-1.nonprod.cf.arity.cloud
