@@ -2,8 +2,8 @@ pivnet_token: (( vault "secret/pcfops/pivnet-token:value" ))
 git_private_key: (( vault "secret/pcfops/ssh/gitlab-ssh-private-key:value" ))
 
 #opsman_major_minor_version: ^1\.10\..*$
-opsman_major_minor_version: ^1\.10\.12$
-ert_major_minor_version: ^1\.10\..*$
+opsman_major_minor_version: ^1\.11\.7$
+ert_major_minor_version: ^1\.11\..*$
 
 # Errands to disable prior to deploying ERT
 # Valid values:

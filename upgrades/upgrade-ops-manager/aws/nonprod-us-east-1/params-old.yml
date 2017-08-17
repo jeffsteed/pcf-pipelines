@@ -13,11 +13,16 @@
 # limitations under the License.
 
 # Resource configuration
+
+# Interval to check on new releases from Pivotal Network
+# eg. 2h, 3h45m, 3000s
+check_new_opsman_every: 168h # 1wk
+
 git_url: git@172.26.252.25:arity-pcf/pcf-pipelines.git
 git_private_key: (( vault "secret/pcfops/ssh/gitlab-ssh-private-key:value" ))
 
 # Ops Manager minor version to track
-opsman_major_minor_version: ^1\.11\..*$
+opsman_major_minor_version: ^1\.10\..*$
 
 # Pivotal Net Token to download Ops Manager binaries from https://network.pivotal.io
 pivnet_token: (( vault "secret/pcfops/pivnet-token:value" ))
@@ -42,5 +47,5 @@ opsman_admin_username: admin
 opsman_passphrase: (( vault "secret/pcfops/nonprod/us-east-1/opsman-password:value" ))
 
 # Ops Manager Url
-# eg. https://myopsman.mydomain.com
-opsman_domain_or_ip_address: 172.26.85.165
+# eg. myopsman.mydomain.com
+opsman_uri: opsman.us-east-1.nonprod.cf.arity.cloud

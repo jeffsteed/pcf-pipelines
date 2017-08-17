@@ -19,4 +19,4 @@ fly -t $CONCOURSE_TARGET set-pipeline -n -p upgrade-ops-manager-${ENVIRONMENT_NA
 
 fly -t $CONCOURSE_TARGET unpause-pipeline -p upgrade-ops-manager-${ENVIRONMENT_NAME}
 
-#rm -rf $TEMP_DIR
+rm -rf $TEMP_DIR
