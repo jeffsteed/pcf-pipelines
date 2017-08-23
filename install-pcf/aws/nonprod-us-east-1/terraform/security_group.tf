@@ -93,7 +93,7 @@ resource "aws_security_group" "pcfSG" {
         from_port = 0
         to_port = 0
         protocol = "-1"
-        cidr_blocks = ["${var.vpn_cidr}", "${var.TF_VAR_public_subnet_cidr_az1}", "${var.TF_VAR_public_subnet_cidr_az2}", "${var.TF_VAR_public_subnet_cidr_az3}", "${var.TF_VAR_ert_subnet_cidr_az1}", "${var.TF_VAR_ert_subnet_cidr_az2}", "${var.TF_VAR_ert_subnet_cidr_az3}", "${var.pcf_opsman_ip}"]
+        cidr_blocks = ["${var.vpn_cidr}", "${var.public_subnet_cidr_az1}", "${var.public_subnet_cidr_az2}", "${var.public_subnet_cidr_az3}", "${var.ert_subnet_cidr_az1}", "${var.ert_subnet_cidr_az2}", "${var.ert_subnet_cidr_az3}", "${var.pcf_opsman_ip}"]
     }
     egress {
         from_port = 0
