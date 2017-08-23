@@ -29,6 +29,7 @@ variable "access_az1" {}
 variable "jumpbox_cidr" {}
 variable "vpn_cidr" {}
 variable "shared_services_cidr" {}
+variable "pcf_opsman_ip" {}
 
 /*
 * used for configuring ingress rules to ops manager vm
