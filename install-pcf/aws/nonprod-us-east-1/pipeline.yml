@@ -107,6 +107,13 @@ jobs:
       TF_VAR_shared_services_cidr: {{TF_VAR_shared_services_cidr}}
       TF_VAR_vpn_cidr: {{TF_VAR_vpn_cidr}}
       TF_VAR_vpc_cidr: {{TF_VAR_vpc_cidr}}
+      TF_VAR_subnet_pcf_public_1: {{TF_VAR_subnet_pcf_public_1}}
+      TF_VAR_subnet_pcf_public_2: {{TF_VAR_subnet_pcf_public_2}}
+      TF_VAR_subnet_pcf_public_3: {{TF_VAR_subnet_pcf_public_3}}
+      TF_VAR_subnet_pcf_ert_1: {{TF_VAR_subnet_pcf_ert_1}}
+      TF_VAR_subnet_pcf_ert_2: {{TF_VAR_subnet_pcf_ert_2}}
+      TF_VAR_subnet_pcf_ert_3: {{TF_VAR_subnet_pcf_ert_3}}
+      TF_VAR_pcf_opsman_ip: {{TF_VAR_pcf_opsman_ip}}
       TF_VAR_public_subnet_cidr_az1: {{TF_VAR_public_subnet_cidr_az1}}
       TF_VAR_public_subnet_cidr_az2: {{TF_VAR_public_subnet_cidr_az2}}
       TF_VAR_public_subnet_cidr_az3: {{TF_VAR_public_subnet_cidr_az3}}
@@ -394,6 +401,13 @@ jobs:
       TF_VAR_shared_services_cidr: {{TF_VAR_shared_services_cidr}}
       TF_VAR_vpn_cidr: {{TF_VAR_vpn_cidr}}
       TF_VAR_vpc_cidr: {{TF_VAR_vpc_cidr}}
+      TF_VAR_subnet_pcf_public_1: {{TF_VAR_subnet_pcf_public_1}}
+      TF_VAR_subnet_pcf_public_2: {{TF_VAR_subnet_pcf_public_2}}
+      TF_VAR_subnet_pcf_public_3: {{TF_VAR_subnet_pcf_public_3}}
+      TF_VAR_subnet_pcf_ert_1: {{TF_VAR_subnet_pcf_ert_1}}
+      TF_VAR_subnet_pcf_ert_2: {{TF_VAR_subnet_pcf_ert_2}}
+      TF_VAR_subnet_pcf_ert_3: {{TF_VAR_subnet_pcf_ert_3}}
+      TF_VAR_pcf_opsman_ip: {{TF_VAR_pcf_opsman_ip}}
       TF_VAR_public_subnet_cidr_az1: {{TF_VAR_public_subnet_cidr_az1}}
       TF_VAR_PcfVpcPublicSubnet_az1: {{TF_VAR_PcfVpcPublicSubnet_az1}}
       TF_VAR_public_subnet_cidr_az2: {{TF_VAR_public_subnet_cidr_az2}}

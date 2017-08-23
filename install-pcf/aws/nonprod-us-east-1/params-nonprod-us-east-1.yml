@@ -71,6 +71,13 @@ TF_VAR_jumpbox_cidr: 172.26.252.4/32
 # For our purposes, jumpbox cidr was not enough, so we are using the entire shared services cidr 
 TF_VAR_shared_services_cidr: 172.26.252.0/25
 TF_VAR_vpn_cidr: 10.0.0.0/8
+TF_VAR_subnet_pcf_public_1: 172.26.86.96/27
+TF_VAR_subnet_pcf_public_2: 172.26.86.128/27
+TF_VAR_subnet_pcf_public_3: 172.26.86.160/27
+TF_VAR_subnet_pcf_ert_1: 172.26.80.0/25
+TF_VAR_subnet_pcf_ert_2: 172.26.80.128/25
+TF_VAR_subnet_pcf_ert_3: 172.26.81.0/25
+TF_VAR_pcf_opsman_ip: 172.26.85.165/32
 
 S3_ENDPOINT: https://s3.amazonaws.com
 S3_OUTPUT_BUCKET: pcf-nonprod-us-east-1-auto-terraform

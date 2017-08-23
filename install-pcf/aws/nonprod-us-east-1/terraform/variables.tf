@@ -29,6 +29,13 @@ variable "access_az1" {}
 variable "jumpbox_cidr" {}
 variable "vpn_cidr" {}
 variable "shared_services_cidr" {}
+variable "subnet_pcf_public_1" {}
+variable "subnet_pcf_public_2" {}
+variable "subnet_pcf_public_3" {}
+variable "subnet_pcf_ert_1" {}
+variable "subnet_pcf_ert_2" {}
+variable "subnet_pcf_ert_3" {}
+variable "pcf_opsman_ip" {}
 
 /*
 * used for configuring ingress rules to ops manager vm
