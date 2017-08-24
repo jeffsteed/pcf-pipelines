@@ -19,7 +19,7 @@ resource "aws_security_group_rule" "allow_directorsg_ingress_default" {
     from_port = 0
     to_port = 0
     protocol = -1
-    cidr_blocks = ["${var.vpc_cidr}","${var.shared_services_cidr}","${var.vpn_cidr}"]
+    cidr_blocks = ["${var.shared_services_cidr}","${var.vpn_cidr}", "${var.public_subnet_cidr_az1}", "${var.public_subnet_cidr_az2}", "${var.public_subnet_cidr_az3}", "${var.ert_subnet_cidr_az1}", "${var.ert_subnet_cidr_az2}", "${var.ert_subnet_cidr_az3}", "${var.pcf_opsman_ip}"]
     security_group_id = "${aws_security_group.directorSG.id}"
 }
 
@@ -68,7 +68,7 @@ resource "aws_security_group" "rdsSG" {
         from_port = 3306
         to_port = 3306
         protocol = "tcp"
-        cidr_blocks = ["${var.vpc_cidr}"]
+        cidr_blocks = ["${var.public_subnet_cidr_az1}", "${var.public_subnet_cidr_az2}", "${var.public_subnet_cidr_az3}", "${var.ert_subnet_cidr_az1}", "${var.ert_subnet_cidr_az2}", "${var.ert_subnet_cidr_az3}", "${var.pcf_opsman_ip}", "${var.rds_subnet_cidr_az1}", "${var.rds_subnet_cidr_az2}", "${var.rds_subnet_cidr_az3}", "${var.services_subnet_cidr_az1}", "${var.services_subnet_cidr_az2}", "${var.services_subnet_cidr_az3}"]
     }
     egress {
         from_port = 0
