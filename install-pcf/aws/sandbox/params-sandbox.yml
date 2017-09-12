@@ -57,7 +57,7 @@ director_certificates:
 TF_VAR_aws_access_key: (( vault "secret/pcfops/tmpsandbox/aws/keys:access_key" ))
 TF_VAR_aws_secret_key: (( vault "secret/pcfops/tmpsandbox/aws/keys:secret_key" ))
 TF_VAR_aws_key_name: pcf-dojo-bastion
-TF_VAR_aws_cert_arn: arn:aws:acm:us-east-1:996608571400:certificate/569b870b-973d-4d41-b320-18449ca86e17
+TF_VAR_aws_cert_arn: arn:aws:acm:us-east-1:996608571400:certificate/5ce7593c-9f01-448c-a66a-fe55db46de55
 TF_VAR_amis_nat: 
 TF_VAR_aws_region: us-east-1
 TF_VAR_az1: us-east-1c
