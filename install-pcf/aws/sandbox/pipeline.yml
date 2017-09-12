@@ -28,7 +28,7 @@ resources:
 - name: pcf-pipelines
   type: git
   source:
-    uri: git@172.26.252.25:arity-pcf/pcf-pipelines.git
+    uri: git@github.com:jeffsteed/pcf-pipelines.git
     branch: master
     private_key: {{git_private_key}}
 
@@ -88,7 +88,7 @@ jobs:
           echo $ami > ami/ami
 
   - task: create-infrastructure
-    file: pcf-pipelines/install-pcf/aws/nonprod-us-east-1/tasks/prepare-aws/task.yml
+    file: pcf-pipelines/install-pcf/aws/sandbox/tasks/prepare-aws/task.yml
     params:
       DB_MASTER_USERNAME: {{db_master_username}}
       DB_MASTER_PASSWORD: {{db_master_password}}
@@ -153,13 +153,13 @@ jobs:
       trigger: true
       passed: [create-infrastructure]
   - task: configure-opsman-auth
-    file: pcf-pipelines/install-pcf/aws/nonprod-us-east-1/tasks/config-opsman/task.yml
+    file: pcf-pipelines/install-pcf/aws/sandbox/tasks/config-opsman/task.yml
     params:
       ERT_DOMAIN: {{ERT_DOMAIN}}
       OPSMAN_USER: {{OPSMAN_USER}}
       OPSMAN_PASSWORD: {{OPSMAN_PASSWORD}}
   - task: configure-director
-    file: pcf-pipelines/install-pcf/aws/nonprod-us-east-1/tasks/config-director/task.yml
+    file: pcf-pipelines/install-pcf/aws/sandbox/tasks/config-director/task.yml
     params:
       aws_access_key: {{TF_VAR_aws_access_key}}
       aws_secret_key: {{TF_VAR_aws_secret_key}}
@@ -188,7 +188,7 @@ jobs:
       trigger: true
       passed: [configure-director]
   - task: deploy-director
-    file: pcf-pipelines/install-pcf/aws/nonprod-us-east-1/tasks/deploy-director/task.yml
+    file: pcf-pipelines/install-pcf/aws/sandbox/tasks/deploy-director/task.yml
     params:
       pcf_ert_domain: {{ERT_DOMAIN}}
       pcf_opsman_admin: {{OPSMAN_USER}}
@@ -235,7 +235,7 @@ jobs:
       passed: [upload-ert]
 
   - task: prepare-rds
-    file: pcf-pipelines/install-pcf/aws/nonprod-us-east-1/tasks/prepare-rds/task.yml
+    file: pcf-pipelines/install-pcf/aws/sandbox/tasks/prepare-rds/task.yml
     params:
       PEM: {{PEM}}
       ERT_DOMAIN: {{ERT_DOMAIN}}
@@ -371,7 +371,7 @@ jobs:
     - get: pcf-pipelines
     - get: terraform-state
   - task: wipe
-    file: pcf-pipelines/install-pcf/aws/nonprod-us-east-1/tasks/wipe-env/task.yml
+    file: pcf-pipelines/install-pcf/aws/sandbox/tasks/wipe-env/task.yml
     params:
       OPSMAN_URI: {{OPSMAN_URI}}
       OPSMAN_USERNAME: {{OPSMAN_USER}}

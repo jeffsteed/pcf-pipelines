@@ -64,7 +64,7 @@ TF_VAR_az1: us-east-1c
 TF_VAR_az2: us-east-1d
 TF_VAR_az3: us-east-1e
 TF_VAR_access_az1: us-east-1c
-TF_VAR_jumpbox_cidr: 172.26.80.118/32
+TF_VAR_jumpbox_cidr: 172.26.80.4/32
 
 S3_ENDPOINT: https://s3.amazonaws.com
 S3_OUTPUT_BUCKET: pcf-dojo-sb-auto-terraform
