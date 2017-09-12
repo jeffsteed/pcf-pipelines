@@ -3,7 +3,7 @@ set -e
 
 root=$(pwd)
 
-cd pcf-pipelines/install-pcf/aws/nonprod-us-east-1/terraform
+cd pcf-pipelines/install-pcf/aws/sandbox/terraform
 
 source "${root}/pcf-pipelines/functions/check_opsman_available.sh"
 

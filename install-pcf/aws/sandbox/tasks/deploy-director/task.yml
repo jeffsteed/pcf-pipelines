@@ -14,4 +14,4 @@ params:
   pcf_opsman_admin_passwd:
 
 run:
-  path: pcf-pipelines/install-pcf/aws/nonprod-us-east-1/tasks/deploy-director/task.sh
+  path: pcf-pipelines/install-pcf/aws/sandbox/tasks/deploy-director/task.sh
