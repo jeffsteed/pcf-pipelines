@@ -18,7 +18,7 @@ ert_major_minor_version: ^1\.10\..*$
 #     autoscaling
 #     autoscaling-register-broker
 #     nfsbrokerpush
-ert_errands_to_disable: none
+ert_errands_to_disable: all
 
 # RDS Master Credentials
 db_master_username: admin
