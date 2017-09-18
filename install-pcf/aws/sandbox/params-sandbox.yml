@@ -50,7 +50,7 @@ db_silk_password: (( vault "secret/pcfops/tmpsandbox/rds-db-password:value" ))
 db_locket_username: admin
 db_locket_password: (( vault "secret/pcfops/tmpsandbox/rds-db-password:value" ))
 
-terraform_prefix: pcfdojo-sb-auto
+terraform_prefix: pcf-dojo-sb-auto
 
 director_certificates:
 
