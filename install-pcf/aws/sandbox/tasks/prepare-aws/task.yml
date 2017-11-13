@@ -61,5 +61,6 @@ params:
   TF_VAR_aws_vpc_PcfVpc:
   OPSMAN_ALLOW_SSH_CIDR_RANGES:
   OPSMAN_ALLOW_HTTPS_CIDR_RANGES:
+  TF_VAR_log_bucket_target:
 run:
   path: pcf-pipelines/install-pcf/aws/sandbox/tasks/prepare-aws/task.sh

@@ -72,6 +72,9 @@ TF_VAR_pcf_opsman_ip: 172.27.95.135/32
 
 S3_ENDPOINT: https://s3.amazonaws.com
 S3_OUTPUT_BUCKET: pcf-dojo-sb-auto-terraform
+
+TF_VAR_log_bucket_target: arity-sandbox-s3-logs
+
 ERT_DOMAIN: cf.us-east-1.arity-sandbox.com
 OPSMAN_USER: admin
 OPSMAN_PASSWORD: welcome1
