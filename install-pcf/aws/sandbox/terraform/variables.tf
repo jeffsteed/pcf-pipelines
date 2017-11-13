@@ -30,7 +30,6 @@ variable "jumpbox_cidr" {}
 variable "vpn_cidr" {}
 variable "shared_services_cidr" {}
 variable "pcf_opsman_ip" {}
-variable "prefix" {}
 variable "log_bucket_target" {}
 
 /*
